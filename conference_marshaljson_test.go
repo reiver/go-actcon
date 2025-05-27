@@ -10,7 +10,7 @@ import (
 	"github.com/reiver/go-actcon"
 )
 
-func TestLeave_MarshalJSON(t *testing.T) {
+func TestConference_MarshalJSON(t *testing.T) {
 
 	tests := []struct{
 		Object actcon.Conference
