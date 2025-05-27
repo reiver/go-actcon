@@ -17,3 +17,7 @@ type Conference struct {
 	Summary   string `json:"summary,omitempty"`
 	To      []string `json:"to,omitempty"`
 }
+
+func (receiver Conference) String() string {
+	return stringify(receiver)
+}

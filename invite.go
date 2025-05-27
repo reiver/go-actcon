@@ -14,3 +14,7 @@ type Invite struct {
 	Summary string `json:"summary,omitempty"` // for preview
 	Target  string `json:"target,omitempty"`  // who was invite (i.e., the invitee)
 }
+
+func (receiver Invite) String() string {
+	return stringify(receiver)
+}

@@ -9,3 +9,7 @@ type Announce struct {
 
 	Object any `json:"object,omitempty"`
 }
+
+func (receiver Announce) String() string {
+	return stringify(receiver)
+}

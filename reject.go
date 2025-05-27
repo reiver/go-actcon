@@ -13,3 +13,7 @@ type Reject struct {
 	Object  any    `json:"object,omitempty"`  // the thing that is being rejected
 	Summary string `json:"summary,omitempty"` // for preview
 }
+
+func (receiver Reject) String() string {
+	return stringify(receiver)
+}

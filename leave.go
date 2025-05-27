@@ -13,3 +13,7 @@ type Leave struct {
 	Object  any    `json:"object,omitempty"`  // what was joined
 	Summary string `json:"summary,omitempty"` // for preview
 }
+
+func (receiver Leave) String() string {
+	return stringify(receiver)
+}

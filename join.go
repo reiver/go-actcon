@@ -13,3 +13,7 @@ type Join struct {
 	Object  any    `json:"object,omitempty"`  // what was joined
 	Summary string `json:"summary,omitempty"` // for preview
 }
+
+func (receiver Join) String() string {
+	return stringify(receiver)
+}

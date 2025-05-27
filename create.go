@@ -13,3 +13,7 @@ type Create struct {
 	Object  any    `json:"object,omitempty"`  // what was created
 	Summary string `json:"summary,omitempty"` // for preview
 }
+
+func (receiver Create) String() string {
+	return stringify(receiver)
+}
