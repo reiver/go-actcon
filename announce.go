@@ -4,7 +4,8 @@ import (
 	"github.com/reiver/go-json"
 )
 
-type AnnounceConference struct {
+type Announce struct {
 	Type json.Const[string] `json:"type" json.value:"Announce"`
-	Object Conference       `json:"object,omitempty"`
+
+	Object any `json:"object,omitempty"`
 }

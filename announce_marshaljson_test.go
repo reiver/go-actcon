@@ -10,24 +10,24 @@ import (
 	"github.com/reiver/go-actcon"
 )
 
-func TestAnnounceConference_MarshalJSON(t *testing.T) {
+func TestAnnounce_MarshalJSON(t *testing.T) {
 
 	tests := []struct{
-		Object actcon.AnnounceConference
+		Object actcon.Announce
 		Expected []byte
 	}{
 		{
 			Expected: []byte(`{"type":"Announce"}`),
 		},
 		{
-			Object: actcon.AnnounceConference{},
+			Object: actcon.Announce{},
 			Expected: []byte(`{"type":"Announce"}`),
 		},
 
 
 
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Actor:"apple",
 				},
@@ -43,7 +43,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Actor:"BANANA",
 				},
@@ -59,7 +59,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Actor:"Cherry",
 				},
@@ -75,7 +75,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Actor:"dAtE",
 				},
@@ -94,7 +94,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Actor:"acct:reiver@mastodon.social",
 				},
@@ -110,7 +110,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Actor:"https://mastodon.social/@reiver",
 				},
@@ -126,7 +126,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Actor:"https://mastodon.social/users/reiver",
 				},
@@ -145,7 +145,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					ID:"https://conference.example/@reiver@mastodon.social/conf/1667517459",
 				},
@@ -164,7 +164,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Name: "@reiver@mastodon.social — Conference",
 				},
@@ -183,7 +183,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Origin: []string{
 						"https://mastodon.social/users/john_idol",
@@ -215,7 +215,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					StartTime: "2022-11-03T16:17:39.759Z",
 				},
@@ -234,7 +234,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Summary: "Hello world!",
 				},
@@ -253,7 +253,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					To: []string{
 						"https://example.com/~joeblow",
@@ -297,7 +297,7 @@ func TestAnnounceConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.AnnounceConference{
+			Object: actcon.Announce{
 				Object: actcon.Conference{
 					Actor:"https://mastodon.social/users/reiver",
 					ID:"https://conference.example/@reiver@mastodon.social/conf/1667517459",
