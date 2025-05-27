@@ -1,6 +1,6 @@
 module github.com/reiver/go-actcon
 
-go 1.24.3
+go 1.24.0
 
 require github.com/reiver/go-json v0.0.0-20250330153804-8f52e0beba6c
 
