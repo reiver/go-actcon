@@ -7,6 +7,7 @@ const (
 	TypeInvite   = "Invite"   // https://www.w3.org/TR/activitystreams-vocabulary/#dfn-invite
 	TypeJoin     = "Join"     // https://www.w3.org/TR/activitystreams-vocabulary/#dfn-join
 	TypeLeave    = "Leave"    // https://www.w3.org/TR/activitystreams-vocabulary/#dfn-leave
+	TypeReject   = "Reject"   // https://www.w3.org/TR/activitystreams-vocabulary/#dfn-reject
 )
 
 // Objects
