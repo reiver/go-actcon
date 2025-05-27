@@ -1,0 +1,10 @@
+module github.com/reiver/go-actcon
+
+go 1.24.3
+
+require github.com/reiver/go-json v0.0.0-20250330153804-8f52e0beba6c
+
+require (
+	github.com/reiver/go-erorr v0.0.0-20240801233437-8cbde6d1fa3f // indirect
+	github.com/reiver/go-lck v0.0.0-20240808133902-b56df221c39f // indirect
+)
