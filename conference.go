@@ -9,6 +9,7 @@ type Conference struct {
 	Type json.Const[string] `json:"type" json.value:"Conference"`
 
 	Actor     string `json:"actor,omitempty"`
+	Closed    string `json:"closed,omitempty"`
 	ID        string `json:"id,omitempty"`
 	Name      string `json:"name,omitempty"`
 	Origin  []string `json:"origin,omitempty"`
