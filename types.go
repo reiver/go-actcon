@@ -1,4 +1,4 @@
-package actcon
+package actsock
 
 // Activities
 const (

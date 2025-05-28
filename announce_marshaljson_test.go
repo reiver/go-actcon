@@ -1,4 +1,4 @@
-package actcon_test
+package actsock_test
 
 import (
 	"testing"
@@ -7,28 +7,28 @@ import (
 
 	"github.com/reiver/go-json"
 
-	"github.com/reiver/go-actcon"
+	"github.com/reiver/go-actsock"
 )
 
 func TestAnnounce_MarshalJSON(t *testing.T) {
 
 	tests := []struct{
-		Object actcon.Announce
+		Object actsock.Announce
 		Expected []byte
 	}{
 		{
 			Expected: []byte(`{"type":"Announce"}`),
 		},
 		{
-			Object: actcon.Announce{},
+			Object: actsock.Announce{},
 			Expected: []byte(`{"type":"Announce"}`),
 		},
 
 
 
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Actor:"apple",
 				},
 			},
@@ -43,8 +43,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Actor:"BANANA",
 				},
 			},
@@ -59,8 +59,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Actor:"Cherry",
 				},
 			},
@@ -75,8 +75,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Actor:"dAtE",
 				},
 			},
@@ -94,8 +94,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Actor:"acct:reiver@mastodon.social",
 				},
 			},
@@ -110,8 +110,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Actor:"https://mastodon.social/@reiver",
 				},
 			},
@@ -126,8 +126,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Actor:"https://mastodon.social/users/reiver",
 				},
 			},
@@ -145,8 +145,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					ID:"https://conference.example/@reiver@mastodon.social/conf/1667517459",
 				},
 			},
@@ -164,8 +164,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Name: "@reiver@mastodon.social — Conference",
 				},
 			},
@@ -183,8 +183,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Origin: []string{
 						"https://mastodon.social/users/john_idol",
 						"https://mastodon.social/users/reiver",
@@ -215,8 +215,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					StartTime: "2022-11-03T16:17:39.759Z",
 				},
 			},
@@ -234,8 +234,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Summary: "Hello world!",
 				},
 			},
@@ -253,8 +253,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					To: []string{
 						"https://example.com/~joeblow",
 						"https://example.com/~janedoe",
@@ -297,8 +297,8 @@ func TestAnnounce_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Announce{
-				Object: actcon.Conference{
+			Object: actsock.Announce{
+				Object: actsock.Conference{
 					Actor:"https://mastodon.social/users/reiver",
 					ID:"https://conference.example/@reiver@mastodon.social/conf/1667517459",
 					Name: "@reiver@mastodon.social — Conference",

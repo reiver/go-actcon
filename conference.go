@@ -1,4 +1,4 @@
-package actcon
+package actsock
 
 import (
 	"github.com/reiver/go-json"

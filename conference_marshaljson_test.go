@@ -1,4 +1,4 @@
-package actcon_test
+package actsock_test
 
 import (
 	"testing"
@@ -7,27 +7,27 @@ import (
 
 	"github.com/reiver/go-json"
 
-	"github.com/reiver/go-actcon"
+	"github.com/reiver/go-actsock"
 )
 
 func TestConference_MarshalJSON(t *testing.T) {
 
 	tests := []struct{
-		Object actcon.Conference
+		Object actsock.Conference
 		Expected []byte
 	}{
 		{
 			Expected: []byte(`{"type":"Conference"}`),
 		},
 		{
-			Object: actcon.Conference{},
+			Object: actsock.Conference{},
 			Expected: []byte(`{"type":"Conference"}`),
 		},
 
 
 
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Actor:"apple",
 			},
 			Expected: []byte(`{`+
@@ -37,7 +37,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Actor:"BANANA",
 			},
 			Expected: []byte(`{`+
@@ -47,7 +47,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Actor:"Cherry",
 			},
 			Expected: []byte(`{`+
@@ -57,7 +57,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Actor:"dAtE",
 			},
 			Expected: []byte(`{`+
@@ -70,7 +70,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Actor:"acct:reiver@mastodon.social",
 			},
 			Expected: []byte(`{`+
@@ -80,7 +80,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Actor:"https://mastodon.social/@reiver",
 			},
 			Expected: []byte(`{`+
@@ -90,7 +90,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 			`}`),
 		},
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Actor:"https://mastodon.social/users/reiver",
 			},
 			Expected: []byte(`{`+
@@ -103,7 +103,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				ID:"https://conference.example/@reiver@mastodon.social/conf/1667517459",
 			},
 			Expected: []byte(`{`+
@@ -116,7 +116,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Name: "@reiver@mastodon.social — Conference",
 			},
 			Expected: []byte(`{`+
@@ -129,7 +129,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Origin: []string{
 					"https://mastodon.social/users/john_idol",
 					"https://mastodon.social/users/reiver",
@@ -155,7 +155,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				StartTime: "2022-11-03T16:17:39.759Z",
 			},
 			Expected: []byte(`{`+
@@ -169,7 +169,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Summary: "Hello world!",
 			},
 			Expected: []byte(`{`+
@@ -182,7 +182,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				To: []string{
 					"https://example.com/~joeblow",
 					"https://example.com/~janedoe",
@@ -220,7 +220,7 @@ func TestConference_MarshalJSON(t *testing.T) {
 
 
 		{
-			Object: actcon.Conference{
+			Object: actsock.Conference{
 				Actor:"https://mastodon.social/users/reiver",
 				ID:"https://conference.example/@reiver@mastodon.social/conf/1667517459",
 				Name: "@reiver@mastodon.social — Conference",
