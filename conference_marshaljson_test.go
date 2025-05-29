@@ -104,6 +104,39 @@ func TestConference_MarshalJSON(t *testing.T) {
 
 		{
 			Object: actsock.Conference{
+				EndPoints:nil,
+			},
+			Expected: []byte(`{`+
+				`"type":"Conference"`+
+			`}`),
+		},
+		{
+			Object: actsock.Conference{
+				EndPoints:map[string]string{},
+			},
+			Expected: []byte(`{`+
+				`"type":"Conference"`+
+			`}`),
+		},
+		{
+			Object: actsock.Conference{
+				EndPoints:map[string]string{
+					"inoutbox":"wss://conference.example/@reiver@mastodon.social/conf/1667517459",
+				},
+			},
+			Expected: []byte(`{`+
+				`"type":"Conference"`+
+				`,`+
+				`"endpoints":{`+
+					`"inoutbox":"wss://conference.example/@reiver@mastodon.social/conf/1667517459"`+
+				`}`+
+			`}`),
+		},
+
+
+
+		{
+			Object: actsock.Conference{
 				ID:"https://conference.example/@reiver@mastodon.social/conf/1667517459",
 			},
 			Expected: []byte(`{`+
