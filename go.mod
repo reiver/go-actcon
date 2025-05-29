@@ -2,7 +2,7 @@ module github.com/reiver/go-actsock
 
 go 1.24.0
 
-require github.com/reiver/go-json v0.0.0-20250330153804-8f52e0beba6c
+require github.com/reiver/go-json v0.0.0-20250529225843-4e6beb4c28e8
 
 require (
 	github.com/reiver/go-erorr v0.0.0-20240801233437-8cbde6d1fa3f // indirect
